@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tubes AI - Uranus</title>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+	<h1>Uranus</h1>
+	<form>
+		<table>
+			<tr>
+				<td><label for="age">Age:</label></td>
+				<td><input type="number" id="age" name="age"></td>
+			</tr>
+			<tr>
+				<td><label for="workclass">Workclass:</label></td>
+				<td>
+					<select id="workclass" name="workclass">
+						<option value="Federal-gov">Federal Governor</option>
+						<option value="Local-gov">Local Governor</option>
+						<option value="Never-worked">Never Worked</option>
+						<option value="Private">Private</option>
+						<option value="Self-emp-inc">Self employed incorporated</option>
+						<option value="Self-emp-not-inc">Self employed not incorporated</option>
+						<option value="State-gov">State governor</option>
+						<option value="Without-pay">Without payment</option>
+						<option value="Unkown">Unkown</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="education">Education:</label></td>
+				<td>
+					<select id="education" name="education">
+						<option value="1st-4th">1st-4th</option>
+						<option value="5th-6th">5th-6th</option>
+						<option value="7th-8th">7th-8th</option>
+						<option value="9th">9th</option>
+						<option value="10th">10th</option>
+						<option value="11th">11th</option>
+						<option value="12th">12th</option>
+						<option value="Assoc-acdm">Associate academy</option>
+						<option value="Assoc-voc">Associate vocational</option>
+						<option value="Bachelors">Bachelors</option>
+						<option value="Doctorate">Doctorate</option>
+						<option value="HS-grad">High school gradudate</option>
+						<option value="Masters">Masters</option>
+						<option value="Preschool.">Preschool</option>
+						<option value="Prof-school">Professional school</option>
+						<option value="Some-college">Some college</option>
+						<option value="Unkown">Uknown</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="marital-status">Marital Status:</label></td>
+				<td>
+					<select id="marital-status" name="marital-status">
+						<option value="Divorced">Divorced</option>
+						<option value="Married-AF-spouse">Married: Armed Force Spouse</option>
+						<option value="Married-civ-spouse">Married: Civilian Spouse</option>
+						<option value="Married-spouse-absent">Married: Spouse Absent</option>
+						<option value="Never-married">Never married</option>
+						<option value="Seperated">Seperated</option>
+						<option value="Widowed">Widowed</option>
+						<option value="Unkown">Unkown</option>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="occupation">Occupation:</label></td>
+				<td>
+					<select id="occupation" name="occupation">
+						<option value="Adm-clerical">Administration clerical</option>
+						<option value="Armed-Forces">Armed forces</option>
+						<option value="Craft-repair">Craft or repair</option>
+						<option value="Exec-managerial">Execution managerial</option>
+						<option value="Farming-fishing">Farming or fishing</option>
+						<option value="Handlers-cleaners">Handlers or cleaners</option>
+						<option value="Machine-op-inspct">Machine operator or inspector</option>
+						<option value="Other-service">Other service</option>
+						<option value="Priv-house-serv">Private house service</option>
+						<option value="Prof-specialty">Professional specialty</option>
+						<option value="Protective-serv">Protective service</option>
+						<option value="Sales">Sales</option>
+						<option value="Tech-support">Technical support</option>
+						<option value="Transport-moving">Transport moving</option>
+						<option value="Unkown">Unkown</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="relationship">Relationship:</label></td>
+				<td>
+					<select id="relationship" name="relationship">
+						<option value="Husband">Husbang</option>
+						<option value="Not-in-family">Not in family</option>
+						<option value="Other-relative">Other relative</option>
+						<option value="Own-child">Own child</option>
+						<option value="Unmarried">Unmarried</option>
+						<option value="Wife">Wife</option>
+						<option value="Unkown">Unknown</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="race">Race:</label></td>
+				<td>
+					<select id="race" name="race">
+						<option value="Amer-Indian-Eskimo">American/Indian/Eskimo</option>
+						<option value="Asian-Pac-Islander">Asian/Pacific/Islander</option>
+						<option value="Black">Black</option>
+						<option value="White">White</option>
+						<option value="Other">Other</option>
+						<option value="Unkown">Unkown</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="sex">Sex:</label></td>
+				<td>
+					<select id="sex" name="sex">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="capital-gain">Capital gain:</label></td>
+				<td><input type="number" id="capital-gain" name="capital-gain"></td>
+			</tr>
+			<tr>
+				<td><label for="capital-loss">Capital gain:</label></td>
+				<td><input type="number" id="capital-loss" name="capital-loss"></td>
+			</tr>
+			<tr>
+				<td><label for="hours-per-week">Hours per week:</label></td>
+				<td><input type="number" id="hours-per-week" name="hours-per-week"></td>
+			</tr>
+			<tr>
+				<td><label for="native-country">Native country:</label></td>
+				<td>
+					<select id="native-country" name="native-country">
+						
+					</select>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
