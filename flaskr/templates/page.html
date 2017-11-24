@@ -7,7 +7,7 @@
 
 <body>
 	<h1>Uranus</h1>
-	<form>
+	<form action="/submit" method="post">
 		<table>
 			<tr>
 				<td><label for="age">Age:</label></td>
@@ -25,7 +25,7 @@
 						<option value="Self-emp-not-inc">Self employed not incorporated</option>
 						<option value="State-gov">State governor</option>
 						<option value="Without-pay">Without payment</option>
-						<option value="Unkown">Unkown</option>
+						<option value="?">Unkown</option>
 					</select>
 				</td>
 			</tr>
@@ -49,7 +49,7 @@
 						<option value="Preschool.">Preschool</option>
 						<option value="Prof-school">Professional school</option>
 						<option value="Some-college">Some college</option>
-						<option value="Unkown">Uknown</option>
+						<option value="?">Uknown</option>
 					</select>
 				</td>
 			</tr>
@@ -64,7 +64,7 @@
 						<option value="Never-married">Never married</option>
 						<option value="Seperated">Seperated</option>
 						<option value="Widowed">Widowed</option>
-						<option value="Unkown">Unkown</option>
+						<option value="?">Unkown</option>
 				</td>
 			</tr>
 			<tr>
@@ -85,7 +85,7 @@
 						<option value="Sales">Sales</option>
 						<option value="Tech-support">Technical support</option>
 						<option value="Transport-moving">Transport moving</option>
-						<option value="Unkown">Unkown</option>
+						<option value="?">Unkown</option>
 					</select>
 				</td>
 			</tr>
@@ -99,7 +99,7 @@
 						<option value="Own-child">Own child</option>
 						<option value="Unmarried">Unmarried</option>
 						<option value="Wife">Wife</option>
-						<option value="Unkown">Unknown</option>
+						<option value="?">Unknown</option>
 					</select>
 				</td>
 			</tr>
@@ -112,7 +112,7 @@
 						<option value="Black">Black</option>
 						<option value="White">White</option>
 						<option value="Other">Other</option>
-						<option value="Unkown">Unkown</option>
+						<option value="?">Unkown</option>
 					</select>
 				</td>
 			</tr>
@@ -141,11 +141,55 @@
 				<td><label for="native-country">Native country:</label></td>
 				<td>
 					<select id="native-country" name="native-country">
-						
+						<option value="Cambodia">Cambodia</option>
+						<option value="Canada">Canada</option>
+						<option value="China">China</option>
+						<option value="Dominican">Dominican</option>
+						<option value="Ecuador">Ecuador</option>
+						<option value="El-Savador">El Savador</option>
+						<option value="England">England</option>
+						<option value="France">France</option>
+						<option value="Germany">Germany</option>
+						<option value="Greece">Greece</option>
+						<option value="Guatemala">Guatemala</option>
+						<option value="Haiti">Haiti</option>
+						<option value="Holand-Netherland">Holand/Netherland</option>
+						<option value="Honduras">Honduras</option>
+						<option value="Hong">Hongkong</option>
+						<option value="Hungary">Hungary</option>
+						<option value="India">India</option>
+						<option value="Iran">Iran</option>
+						<option value="Ireland">Ireland</option>
+						<option value="Italy">Italy</option>
+						<option value="Jamaica">Jamaica</option>
+						<option value="Japan">Japan</option>
+						<option value="Laos">Laos</option>
+						<option value="Mexico">Mexico</option>
+						<option value="Nicaragua">Nicaragua</option>
+						<option value="Outlying-US(Guam-USVI-etc">Outlying US(Guam, US Virgin Islands, etc)</option>
+						<option value="Peru">Peru</option>
+						<option value="Philipine">Philipine</option>
+						<option value="Poland">Poland</option>
+						<option value="Portugal">Portugal</option>
+						<option value="Puerto-Rico">Puerto Rico</option>
+						<option value="Scotland">Scotland</option>
+						<option value="South">South Africa</option>
+						<option value="Taiwan">Taiwan</option>
+						<option value="Thailand">Thailand</option>
+						<option value="Trinidad&Tobago">Trinidad and Tobago</option>
+						<option value="United-States">United States</option>
+						<option value="Vietnam">Vietnam</option>
+						<option value="Yugoslavia">Yugoslavia</option>
+						<option value="?">Unkown</option>
 					</select>
 				</td>
 			</tr>
 		</table>
+		<input type="submit" value="Submit">
 	</form>
+
+	<div>
+		{{ result }}
+	</div>
 </body>
 </html>
