@@ -1,6 +1,6 @@
 import os
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
-from sklearn import joblib
+from sklearn.externals import joblib
 from sklearn import preprocessing
 import numpy
 import pandas
