@@ -32,9 +32,32 @@ h4 {
 }
 
 .output {
-	margin: 0;
-	padding: 10px 250px 100px 10px;
+	width: 400px;
+	height: 200px;
+	padding: 10px;
 	margin: 0 auto;
 	border: 1px solid #bab8b8;
 	background-color: #f7f7f7;
+	text-align: center;
 }
+
+.result {
+	font-size: 10rem;
+}
+
+.about {
+	width: 100%;
+	padding-left: 10%;
+	background-color: black;
+	min-height: 100px;
+	color: white;
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
+
+.jumbotron {
+	background-color: transparent;
+	padding-top: 10px;
+	margin-bottom: 0px;
+}
+
