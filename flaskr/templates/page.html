@@ -75,6 +75,10 @@
 					</td>
 				</tr>
 				<tr>
+					<td><label for="education-num">Education Num</label></td>
+					<td><input class="form-control" type="number" id="education-num" name="education-num"></td>
+				</tr>
+				<tr>
 					<td><label for="marital-status">Marital Status:</label></td>
 					<td>
 						<select class="form-control" id="marital-status" name="marital-status">
@@ -211,7 +215,7 @@
 	</div>
 
 	<div>
-		<input id="prediction" class="center output" type="text" name="prediction" placeholder="Prediction Result" disabled>
+		<input id="prediction" class="center output" type="text" name="prediction" placeholder="Prediction Result" value="{{result}}" disabled>
 	</div>
 	<br>
 </body>

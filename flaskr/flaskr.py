@@ -1,5 +1,6 @@
 import os
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
+from werkzeug.wrappers import Response
 from sklearn.externals import joblib
 from sklearn import preprocessing
 from sklearn import tree
@@ -42,10 +43,14 @@ def submit():
 	print('TEST')
 	print(discrete_values[0])
 
-	dataFrame = pd.DataFrame([request.form['age'], discrete_values[0], discrete_values[1], discrete_values[2], discrete_values[3], discrete_values[4], discrete_values[5], request.form['capital-gain'], request.form['capital-loss'], request.form['hours-per-week']], columns=['age', 'workclass', 'education', 'marital-status', 'occupation', 'relationship', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week'])
+	dataFrame = pd.DataFrame([[request.form['age'], discrete_values[0], discrete_values[1], request.form['education-num'], discrete_values[2], discrete_values[3], discrete_values[4], discrete_values[5], request.form['capital-gain'], request.form['capital-loss'], request.form['hours-per-week']]], columns=['age', 'workclass', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week'])
+	test_data = np.array(dataFrame)
 	print(dataFrame)
 
-	result = model.predict(dataFrame)
-	return redirect(url_for('index'), result=result)
+	result = model.predict(test_data)
+	label_encoder.classes_ = np.load(model_dir_path + '\\flaskr\\income.npy')
+	print(label_encoder.inverse_transform(result)[0])
+	transform_result = label_encoder.inverse_transform(result)[0]
+	return redirect(url_for('showPage'), Response(response=transform_result, status=200, content_type='text/html'))
 
 
