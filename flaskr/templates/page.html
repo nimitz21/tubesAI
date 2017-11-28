@@ -2,194 +2,217 @@
 <html>
 <head>
 	<title>Tubes AI - Uranus</title>
-	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles/style.css') }}">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-	<h1>Uranus</h1>
-	<form action="/submit" method="post">
-		<table>
-			<tr>
-				<td><label for="age">Age:</label></td>
-				<td><input type="number" id="age" name="age"></td>
-			</tr>
-			<tr>
-				<td><label for="workclass">Workclass:</label></td>
-				<td>
-					<select id="workclass" name="workclass">
-						<option value="Federal-gov">Federal Governor</option>
-						<option value="Local-gov">Local Governor</option>
-						<option value="Never-worked">Never Worked</option>
-						<option value="Private">Private</option>
-						<option value="Self-emp-inc">Self employed incorporated</option>
-						<option value="Self-emp-not-inc">Self employed not incorporated</option>
-						<option value="State-gov">State governor</option>
-						<option value="Without-pay">Without payment</option>
-						<option value="?">Unkown</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td><label for="education">Education:</label></td>
-				<td>
-					<select id="education" name="education">
-						<option value="1st-4th">1st-4th</option>
-						<option value="5th-6th">5th-6th</option>
-						<option value="7th-8th">7th-8th</option>
-						<option value="9th">9th</option>
-						<option value="10th">10th</option>
-						<option value="11th">11th</option>
-						<option value="12th">12th</option>
-						<option value="Assoc-acdm">Associate academy</option>
-						<option value="Assoc-voc">Associate vocational</option>
-						<option value="Bachelors">Bachelors</option>
-						<option value="Doctorate">Doctorate</option>
-						<option value="HS-grad">High school gradudate</option>
-						<option value="Masters">Masters</option>
-						<option value="Preschool.">Preschool</option>
-						<option value="Prof-school">Professional school</option>
-						<option value="Some-college">Some college</option>
-						<option value="?">Uknown</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td><label for="marital-status">Marital Status:</label></td>
-				<td>
-					<select id="marital-status" name="marital-status">
-						<option value="Divorced">Divorced</option>
-						<option value="Married-AF-spouse">Married: Armed Force Spouse</option>
-						<option value="Married-civ-spouse">Married: Civilian Spouse</option>
-						<option value="Married-spouse-absent">Married: Spouse Absent</option>
-						<option value="Never-married">Never married</option>
-						<option value="Seperated">Seperated</option>
-						<option value="Widowed">Widowed</option>
-						<option value="?">Unkown</option>
-				</td>
-			</tr>
-			<tr>
-				<td><label for="occupation">Occupation:</label></td>
-				<td>
-					<select id="occupation" name="occupation">
-						<option value="Adm-clerical">Administration clerical</option>
-						<option value="Armed-Forces">Armed forces</option>
-						<option value="Craft-repair">Craft or repair</option>
-						<option value="Exec-managerial">Execution managerial</option>
-						<option value="Farming-fishing">Farming or fishing</option>
-						<option value="Handlers-cleaners">Handlers or cleaners</option>
-						<option value="Machine-op-inspct">Machine operator or inspector</option>
-						<option value="Other-service">Other service</option>
-						<option value="Priv-house-serv">Private house service</option>
-						<option value="Prof-specialty">Professional specialty</option>
-						<option value="Protective-serv">Protective service</option>
-						<option value="Sales">Sales</option>
-						<option value="Tech-support">Technical support</option>
-						<option value="Transport-moving">Transport moving</option>
-						<option value="?">Unkown</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td><label for="relationship">Relationship:</label></td>
-				<td>
-					<select id="relationship" name="relationship">
-						<option value="Husband">Husbang</option>
-						<option value="Not-in-family">Not in family</option>
-						<option value="Other-relative">Other relative</option>
-						<option value="Own-child">Own child</option>
-						<option value="Unmarried">Unmarried</option>
-						<option value="Wife">Wife</option>
-						<option value="?">Unknown</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td><label for="race">Race:</label></td>
-				<td>
-					<select id="race" name="race">
-						<option value="Amer-Indian-Eskimo">American/Indian/Eskimo</option>
-						<option value="Asian-Pac-Islander">Asian/Pacific/Islander</option>
-						<option value="Black">Black</option>
-						<option value="White">White</option>
-						<option value="Other">Other</option>
-						<option value="?">Unkown</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td><label for="sex">Sex:</label></td>
-				<td>
-					<select id="sex" name="sex">
-						<option value="Male">Male</option>
-						<option value="Female">Female</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td><label for="capital-gain">Capital gain:</label></td>
-				<td><input type="number" id="capital-gain" name="capital-gain"></td>
-			</tr>
-			<tr>
-				<td><label for="capital-loss">Capital gain:</label></td>
-				<td><input type="number" id="capital-loss" name="capital-loss"></td>
-			</tr>
-			<tr>
-				<td><label for="hours-per-week">Hours per week:</label></td>
-				<td><input type="number" id="hours-per-week" name="hours-per-week"></td>
-			</tr>
-			<tr>
-				<td><label for="native-country">Native country:</label></td>
-				<td>
-					<select id="native-country" name="native-country">
-						<option value="Cambodia">Cambodia</option>
-						<option value="Canada">Canada</option>
-						<option value="China">China</option>
-						<option value="Dominican">Dominican</option>
-						<option value="Ecuador">Ecuador</option>
-						<option value="El-Savador">El Savador</option>
-						<option value="England">England</option>
-						<option value="France">France</option>
-						<option value="Germany">Germany</option>
-						<option value="Greece">Greece</option>
-						<option value="Guatemala">Guatemala</option>
-						<option value="Haiti">Haiti</option>
-						<option value="Holand-Netherland">Holand/Netherland</option>
-						<option value="Honduras">Honduras</option>
-						<option value="Hong">Hongkong</option>
-						<option value="Hungary">Hungary</option>
-						<option value="India">India</option>
-						<option value="Iran">Iran</option>
-						<option value="Ireland">Ireland</option>
-						<option value="Italy">Italy</option>
-						<option value="Jamaica">Jamaica</option>
-						<option value="Japan">Japan</option>
-						<option value="Laos">Laos</option>
-						<option value="Mexico">Mexico</option>
-						<option value="Nicaragua">Nicaragua</option>
-						<option value="Outlying-US(Guam-USVI-etc">Outlying US(Guam, US Virgin Islands, etc)</option>
-						<option value="Peru">Peru</option>
-						<option value="Philipine">Philipine</option>
-						<option value="Poland">Poland</option>
-						<option value="Portugal">Portugal</option>
-						<option value="Puerto-Rico">Puerto Rico</option>
-						<option value="Scotland">Scotland</option>
-						<option value="South">South Africa</option>
-						<option value="Taiwan">Taiwan</option>
-						<option value="Thailand">Thailand</option>
-						<option value="Trinidad&Tobago">Trinidad and Tobago</option>
-						<option value="United-States">United States</option>
-						<option value="Vietnam">Vietnam</option>
-						<option value="Yugoslavia">Yugoslavia</option>
-						<option value="?">Unkown</option>
-					</select>
-				</td>
-			</tr>
-		</table>
-		<input type="submit" value="Submit">
-	</form>
+	<header class="navbar navbar-inverse">
+			<div class="container">
+				<nav class="navigation">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <h2 class="headerTitle"><i>URANUS</i></h2>
+				      <h4 class="headerTitle">Your Reliable Income Predictor</h4>
+				    </div>
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+
+				  </div><!-- /.container-fluid -->
+				</nav>			
+			</div>				
+		</header>
+	<div class="container">
+		<form action="/submit" method="post">
+			<table class="subContainer">
+				<tr>
+					<td><label for="age">Age:</label></td>
+					<td><input class="form-control" type="number" id="age" name="age"></td>
+				</tr>
+				<tr>
+					<td><label for="workclass">Workclass:</label></td>
+					<td>
+						<select class="form-control" id="workclass" name="workclass">
+							<option value="Federal-gov">Federal Governor</option>
+							<option value="Local-gov">Local Governor</option>
+							<option value="Never-worked">Never Worked</option>
+							<option value="Private">Private</option>
+							<option value="Self-emp-inc">Self employed incorporated</option>
+							<option value="Self-emp-not-inc">Self employed not incorporated</option>
+							<option value="State-gov">State governor</option>
+							<option value="Without-pay">Without payment</option>
+							<option value="?">Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="education">Education:</label></td>
+					<td>
+						<select class="form-control" id="education" name="education">
+							<option value="1st-4th">1st-4th</option>
+							<option value="5th-6th">5th-6th</option>
+							<option value="7th-8th">7th-8th</option>
+							<option value="9th">9th</option>
+							<option value="10th">10th</option>
+							<option value="11th">11th</option>
+							<option value="12th">12th</option>
+							<option value="Assoc-acdm">Associate academy</option>
+							<option value="Assoc-voc">Associate vocational</option>
+							<option value="Bachelors">Bachelors</option>
+							<option value="Doctorate">Doctorate</option>
+							<option value="HS-grad">High school gradudate</option>
+							<option value="Masters">Masters</option>
+							<option value="Preschool.">Preschool</option>
+							<option value="Prof-school">Professional school</option>
+							<option value="Some-college">Some college</option>
+							<option value="?">Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="marital-status">Marital Status:</label></td>
+					<td>
+						<select class="form-control" id="marital-status" name="marital-status">
+							<option value="Divorced">Divorced</option>
+							<option value="Married-AF-spouse">Married: Armed Force Spouse</option>
+							<option value="Married-civ-spouse">Married: Civilian Spouse</option>
+							<option value="Married-spouse-absent">Married: Spouse Absent</option>
+							<option value="Never-married">Never married</option>
+							<option value="Seperated">Seperated</option>
+							<option value="Widowed">Widowed</option>
+							<option value="?">Unknown</option>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="occupation">Occupation:</label></td>
+					<td>
+						<select class="form-control" id="occupation" name="occupation">
+							<option value="Adm-clerical">Administration clerical</option>
+							<option value="Armed-Forces">Armed forces</option>
+							<option value="Craft-repair">Craft or repair</option>
+							<option value="Exec-managerial">Execution managerial</option>
+							<option value="Farming-fishing">Farming or fishing</option>
+							<option value="Handlers-cleaners">Handlers or cleaners</option>
+							<option value="Machine-op-inspct">Machine operator or inspector</option>
+							<option value="Other-service">Other service</option>
+							<option value="Priv-house-serv">Private house service</option>
+							<option value="Prof-specialty">Professional specialty</option>
+							<option value="Protective-serv">Protective service</option>
+							<option value="Sales">Sales</option>
+							<option value="Tech-support">Technical support</option>
+							<option value="Transport-moving">Transport moving</option>
+							<option value="?">Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="relationship">Relationship:</label></td>
+					<td>
+						<select class="form-control" id="relationship" name="relationship">
+							<option value="Husband">Husband</option>
+							<option value="Not-in-family">Not in family</option>
+							<option value="Other-relative">Other relative</option>
+							<option value="Own-child">Own child</option>
+							<option value="Unmarried">Unmarried</option>
+							<option value="Wife">Wife</option>
+							<option value="?">Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="race">Race:</label></td>
+					<td>
+						<select class="form-control" id="race" name="race">
+							<option value="Amer-Indian-Eskimo">American/Indian/Eskimo</option>
+							<option value="Asian-Pac-Islander">Asian/Pacific/Islander</option>
+							<option value="Black">Black</option>
+							<option value="White">White</option>
+							<option value="Other">Other</option>
+							<option value="?">Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="sex">Sex:</label></td>
+					<td>
+						<select class="form-control" id="sex" name="sex">
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="capital-gain">Capital gain:</label></td>
+					<td><input class="form-control" type="number" id="capital-gain" name="capital-gain"></td>
+				</tr>
+				<tr>
+					<td><label for="capital-loss">Capital gain:</label></td>
+					<td><input class="form-control" type="number" id="capital-loss" name="capital-loss"></td>
+				</tr>
+				<tr>
+					<td><label for="hours-per-week">Hours per week:</label></td>
+					<td><input class="form-control" type="number" id="hours-per-week" name="hours-per-week"></td>
+				</tr>
+				<tr>
+					<td><label for="native-country">Native country:</label></td>
+					<td>
+						<select class="form-control" 	id="native-country" name="native-country">
+							<option value="Cambodia">Cambodia</option>
+							<option value="Canada">Canada</option>
+							<option value="China">China</option>
+							<option value="Dominican">Dominican</option>
+							<option value="Ecuador">Ecuador</option>
+							<option value="El-Savador">El Savador</option>
+							<option value="England">England</option>
+							<option value="France">France</option>
+							<option value="Germany">Germany</option>
+							<option value="Greece">Greece</option>
+							<option value="Guatemala">Guatemala</option>
+							<option value="Haiti">Haiti</option>
+							<option value="Holand-Netherland">Holand/Netherland</option>
+							<option value="Honduras">Honduras</option>
+							<option value="Hong">Hongkong</option>
+							<option value="Hungary">Hungary</option>
+							<option value="India">India</option>
+							<option value="Iran">Iran</option>
+							<option value="Ireland">Ireland</option>
+							<option value="Italy">Italy</option>
+							<option value="Jamaica">Jamaica</option>
+							<option value="Japan">Japan</option>
+							<option value="Laos">Laos</option>
+							<option value="Mexico">Mexico</option>
+							<option value="Nicaragua">Nicaragua</option>
+							<option value="Outlying-US(Guam-USVI-etc">Outlying US(Guam, US Virgin Islands, etc)</option>
+							<option value="Peru">Peru</option>
+							<option value="Philipine">Philipine</option>
+							<option value="Poland">Poland</option>
+							<option value="Portugal">Portugal</option>
+							<option value="Puerto-Rico">Puerto Rico</option>
+							<option value="Scotland">Scotland</option>
+							<option value="South">South Africa</option>
+							<option value="Taiwan">Taiwan</option>
+							<option value="Thailand">Thailand</option>
+							<option value="Trinidad&Tobago">Trinidad and Tobago</option>
+							<option value="United-States">United States</option>
+							<option value="Vietnam">Vietnam</option>
+							<option value="Yugoslavia">Yugoslavia</option>
+							<option value="?">Unknown</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<input class="center btn btn-success" type="submit" value="Submit">
+		</form>
+	</div>
 
 	<div>
-		{{ result }}
+		<input id="prediction" class="center output" type="text" name="prediction" placeholder="Your Prediction" disabled>
 	</div>
+	<br>
 </body>
 </html>
