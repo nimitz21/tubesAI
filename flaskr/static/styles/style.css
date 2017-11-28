@@ -23,12 +23,16 @@ h4 {
 	padding: 10px;
 }
 
+.btn {
+	margin-bottom: 1.6rem;
+}
+
 .btn:hover {
 	cursor: pointer;
 }
 
 .output {
 	margin: 0;
-	margin: 2rem 0 0 33.5%;
 	padding: 10px 250px 100px 10px;
+	margin: 0 auto;
 }
