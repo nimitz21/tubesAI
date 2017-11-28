@@ -35,4 +35,6 @@ h4 {
 	margin: 0;
 	padding: 10px 250px 100px 10px;
 	margin: 0 auto;
+	border: 1px solid #bab8b8;
+	background-color: #f7f7f7;
 }
