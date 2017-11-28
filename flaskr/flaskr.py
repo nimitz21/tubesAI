@@ -51,6 +51,6 @@ def submit():
 	label_encoder.classes_ = np.load(model_dir_path + '\\flaskr\\income.npy')
 	print(label_encoder.inverse_transform(result)[0])
 	transform_result = label_encoder.inverse_transform(result)[0]
-	return redirect(url_for('showPage'), Response(response=transform_result, status=200, content_type='text/html'))
+	return render_template('page.html', result=transform_result)
 
 
